@@ -21,14 +21,14 @@ def get_filters():
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
 
-    print('Hello! Let\'s explore some US bikeshare data!')
+    print('Hello my friend! Let\'s explore some US bikeshare data! It will be fun')
 
     # define default parameters which are empty strings
     city, filter, month, day = "", "", "", ""
 
     # get user input for city (chicago, new york city, washington).
     while city not in CITY_DATA.keys():
-        city = input('Would you like to see data for Chicago, New York, or Washington? ').lower()
+        city = input('Would you like to see data for Chicago, New York, or Washington? All are great cities...').lower()
 
     while filter not in ['month', 'day', 'both', 'none']:
         filter = input('Would you like to filter the data by month, day, both or not at all?\nType \"none\" for no time filter.\n').lower()
@@ -211,7 +211,6 @@ def raw_data(df):
     """Displays raw data of data frame, 5 rows each time before asking whether to continue"""
     counter = 0
     wanna_see = input("Do you want to see raw data? Please answer yes or no. ").lower()
-    #df_raw = df.drop(['month', 'weekday', 'hour'], axis = 1).copy()
     size_df = df.shape[0]
     while (wanna_see == "yes" and counter + 5 <= size_df):
         print(df.iloc[counter:counter+5, 0:-3])
@@ -233,7 +232,7 @@ def main():
             print("\nSorry, there is no user data available for {}!\n\n{}\n".format(city.title(), '-'*40))
         raw_data(df)
 
-        restart = input('\nWould you like to restart? Enter yes or no.\n')
+        restart = input('\nDid you enjoy our tour? Would you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
             break
 
