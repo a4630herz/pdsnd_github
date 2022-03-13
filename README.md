@@ -16,10 +16,13 @@ Project analyzes US bikeshare data based on user given input. The user selects:
 Output:
 - statistics on rental date and duration
 - statistics on the clients
-- if requested: raw data 
+- if requested: raw data
 
 ### Files used
-Include the files used
+The csv files of three cities, containing the raw data:
+chicago.csv
+new_york_city.csv
+washington.csv
 
 ### Credits
 It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
