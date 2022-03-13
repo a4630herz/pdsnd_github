@@ -211,7 +211,6 @@ def raw_data(df):
     """Displays raw data of data frame, 5 rows each time before asking whether to continue"""
     counter = 0
     wanna_see = input("Do you want to see raw data? Please answer yes or no. ").lower()
-    #df_raw = df.drop(['month', 'weekday', 'hour'], axis = 1).copy()
     size_df = df.shape[0]
     while (wanna_see == "yes" and counter + 5 <= size_df):
         print(df.iloc[counter:counter+5, 0:-3])
