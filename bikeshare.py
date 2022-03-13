@@ -23,7 +23,7 @@ def get_filters():
 
     print('Hello! Let\'s explore some US bikeshare data!')
 
-    # define default parameters
+    # define default parameters which are empty strings
     city, filter, month, day = "", "", "", ""
 
     # get user input for city (chicago, new york city, washington).
