@@ -26,7 +26,7 @@ def get_filters():
     # define default parameters
     city, filter, month, day = "", "", "", ""
 
-    # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
+    # get user input for city (chicago, new york city, washington).
     while city not in CITY_DATA.keys():
         city = input('Would you like to see data for Chicago, New York, or Washington? ').lower()
 
@@ -65,7 +65,7 @@ def load_data(city, month, day):
     """
     # load data file into a dataframe
     df = pd.read_csv(CITY_DATA.get(city))
-    
+
     # convert the Start Time column to datetime
     df['Start Time'] = pd.to_datetime(df['Start Time'])
 
@@ -73,16 +73,16 @@ def load_data(city, month, day):
     df['month'] = df['Start Time'].dt.month
     df['weekday'] = df['Start Time'].dt.weekday
     df['hour'] = df['Start Time'].dt.hour
-    
+
     # filter by month if applicable
     if month != 'all':
         # use the index of the months list to get the corresponding int
         month_int = list_months.index(month) + 1
-    
+
         # filter by month to create the new dataframe
         df = df[df["month"] == month_int]
 
-    
+
     # filter by weekday if applicable
     if day != 'all':
         # filter by weekday to create the new dataframe
