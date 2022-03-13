@@ -21,14 +21,14 @@ def get_filters():
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
 
-    print('Hello! Let\'s explore some US bikeshare data!')
+    print('Hello my friend! Let\'s explore some US bikeshare data! It will be fun')
 
     # define default parameters
     city, filter, month, day = "", "", "", ""
 
     # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     while city not in CITY_DATA.keys():
-        city = input('Would you like to see data for Chicago, New York, or Washington? ').lower()
+        city = input('Would you like to see data for Chicago, New York, or Washington? All are great cities...').lower()
 
     while filter not in ['month', 'day', 'both', 'none']:
         filter = input('Would you like to filter the data by month, day, both or not at all?\nType \"none\" for no time filter.\n').lower()
@@ -65,7 +65,7 @@ def load_data(city, month, day):
     """
     # load data file into a dataframe
     df = pd.read_csv(CITY_DATA.get(city))
-    
+
     # convert the Start Time column to datetime
     df['Start Time'] = pd.to_datetime(df['Start Time'])
 
@@ -73,16 +73,16 @@ def load_data(city, month, day):
     df['month'] = df['Start Time'].dt.month
     df['weekday'] = df['Start Time'].dt.weekday
     df['hour'] = df['Start Time'].dt.hour
-    
+
     # filter by month if applicable
     if month != 'all':
         # use the index of the months list to get the corresponding int
         month_int = list_months.index(month) + 1
-    
+
         # filter by month to create the new dataframe
         df = df[df["month"] == month_int]
 
-    
+
     # filter by weekday if applicable
     if day != 'all':
         # filter by weekday to create the new dataframe
@@ -233,7 +233,7 @@ def main():
             print("\nSorry, there is no user data available for {}!\n\n{}\n".format(city.title(), '-'*40))
         raw_data(df)
 
-        restart = input('\nWould you like to restart? Enter yes or no.\n')
+        restart = input('\nDid you enjoy our tour? Would you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
             break
 
