@@ -8,7 +8,15 @@ Creation date for project and README file:
 Project Title: Analyzing US bikeshare data
 
 ### Description
-Describe what your project is about and what it does
+Project analyzes US bikeshare data based on user given input. The user selects:
+- city
+- whether filters are used
+- if filters should be used: month or day to be filtered
+
+Output:
+- statistics on rental date and duration
+- statistics on the clients
+- if requested: raw data 
 
 ### Files used
 Include the files used
